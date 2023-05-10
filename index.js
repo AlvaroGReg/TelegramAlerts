@@ -5,7 +5,20 @@ require('dotenv').config();
 const token = process.env.BOT_TOKEN
 
 // Crea un objeto bot con el token
-const bot = new TelegramBot(token, { polling: true })
+const bot = new TelegramBot(token, { polling: false })
+
+// Configurar la URL de tu webhook
+const urlWebhook = 'https://lavender-amazing-rooster.glitch.me' 
+const options = {
+  webHook: {
+    port: process.env.PORT || 443,
+    host: '0.0.0.0'
+
+  }
+}
+
+// Llamar al método setWebhook con la URL configurada
+bot.setWebHook(`${urlWebhook}/${token}`, options)
 
 // Maneja el comando /alerta
 bot.onText(/\/alerta/, (msg) => {

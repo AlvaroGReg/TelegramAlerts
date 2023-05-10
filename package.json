@@ -1,7 +1,14 @@
 {
+  "name": "mi-bot-de-telegram",
+  "version": "1.0.0",
+  "description": "Un bot de Telegram para enviar alertas periódicas",
+  "main": "index.js",
   "dependencies": {
     "dotenv": "^16.0.3",
     "node-schedule": "^2.1.1",
     "node-telegram-bot-api": "^0.61.0"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
